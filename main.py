@@ -29,7 +29,7 @@ async def send_welcome(message: types.Message, state: FSMContext):
         model="text-davinci-003",
         prompt=message.text(),
         temperature=0.9,
-        max_tokens=200,
+        max_tokens=1000,
         top_p=1,
         frequency_penalty=0.0,
         presence_penalty=0.6
@@ -39,22 +39,15 @@ async def send_welcome(message: types.Message, state: FSMContext):
 
 @dp.message_handler()
 async def send_letsgo(message: types.Message, state: FSMContext):
-    f = open("messages.txt", "r+")
-    print(f.read())
-    f.write(f.read() + message.text)
-    f.close()
-    f = open("messages.txt", "r+")
     response = openai.Completion.create(
-       model="text-davinci-003",
-        prompt=f.read(),
-        temperature=0,
+        model="text-davinci-003",
+        prompt=message.text(),
+        temperature=0.9,
         max_tokens=1000,
-        top_p=1.0,
-        frequency_penalty=0.5,
-        presence_penalty=0.0
+        top_p=1,
+        frequency_penalty=0.0,
+        presence_penalty=0.6
     )
-    f.write(response.choices[0].text + "\n")
-    f.close()
     await message.reply(response.choices[0].text)
 
 if __name__ == '__main__':
