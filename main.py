@@ -6,7 +6,7 @@ from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.dispatcher import FSMContext
 
 openai.api_key = "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"
-API_TOKEN_BOT = '6093342208:AAHCBlKnqV3FCh5aJZMBkP3hEdwg4I3GoVc'
+API_TOKEN_BOT = '6093342208:AAE2xfIRu73V10JkUw-JT83t-SwyqcIELZQ'
 
 
 bot = Bot(token=API_TOKEN_BOT)
