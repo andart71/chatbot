@@ -5,7 +5,7 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.dispatcher import FSMContext
 
-openai.api_key = "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"
+openai.api_key = "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"
 API_TOKEN_BOT = '6093342208:AAHCBlKnqV3FCh5aJZMBkP3hEdwg4I3GoVc'
 
 
